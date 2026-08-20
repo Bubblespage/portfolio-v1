@@ -3,7 +3,7 @@ const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 
 menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+  navLinks.classList.toggle('a ctive');
 });
 
 // Auto-close mobile drawer when any navigation link is clicked
