@@ -999,6 +999,8 @@ body {
   text-align: center;
   position: relative;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  isolation: isolate;
+  animation: contactFloat 7s ease-in-out infinite;
 }
 
 .contact-card::before {
@@ -1009,6 +1011,48 @@ body {
   background: linear-gradient(135deg, rgba(47, 129, 247, 0.35), rgba(147, 51, 234, 0.35), transparent 70%);
   z-index: -1;
   opacity: 0.6;
+  animation: contactGlow 5s ease-in-out infinite alternate;
+}
+
+.contact-card::after {
+  content: "";
+  position: absolute;
+  inset: 12% 18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.16), transparent 68%);
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: -1;
+  animation: contactOrb 6s ease-in-out infinite alternate;
+}
+
+@keyframes contactFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes contactGlow {
+  from {
+    opacity: 0.45;
+    filter: blur(0);
+  }
+  to {
+    opacity: 0.9;
+    filter: blur(8px);
+  }
+}
+
+@keyframes contactOrb {
+  from {
+    transform: translateX(-12%) scale(0.85);
+  }
+  to {
+    transform: translateX(12%) scale(1.15);
+  }
 }
 
 .contact-title {
@@ -1023,11 +1067,52 @@ body {
   font-size: 1rem;
 }
 
+.contact-email {
+  display: inline-block;
+  margin-bottom: 1.7rem;
+  color: var(--accent-cyan);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-email:hover {
+  color: var(--text-main);
+  transform: translateY(-2px);
+}
+
 .contact-actions {
   display: flex;
   justify-content: center;
   gap: 1.2rem;
   margin-bottom: 2.5rem;
+}
+
+.contact-actions > * {
+  animation: contactActionIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.contact-actions > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.contact-actions > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.contact-actions > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@keyframes contactActionIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .footer-divider {
@@ -1290,7 +1375,11 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .skill-card {
+  .skill-card,
+  .contact-card,
+  .contact-card::before,
+  .contact-card::after,
+  .contact-actions > * {
     opacity: 1;
     transform: none;
     animation: none;
