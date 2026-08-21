@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg-primary: #080a10;
   --bg-card: rgba(18, 23, 33, 0.75);
   --accent: #2f81f7;
@@ -525,6 +525,102 @@ body {
   transform: translateY(-2px);
 }
 
+/* Certifications */
+.certifications-section {
+  min-height: auto;
+  padding-top: 0;
+  padding-bottom: 5rem;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.certification-card {
+  display: block;
+  min-width: 0;
+  padding: 1rem;
+  background: rgba(18, 23, 33, 0.72);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-hover);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+}
+
+.certification-card:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+.certification-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #13b5ea, #0876c9);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.certification-card h3 {
+  min-height: 2.7em;
+  color: var(--text-main);
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.certification-provider,
+.certification-card time {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.certification-provider {
+  min-height: 2.2em;
+  margin-top: 0.35rem;
+}
+
+.certification-card time {
+  margin-top: 0.8rem;
+  color: #cbd5e1;
+}
+
+.certification-cta {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-top: 0.9rem;
+  border: 1px solid rgba(47, 129, 247, 0.35);
+  border-radius: 8px;
+  background: rgba(47, 129, 247, 0.1);
+  color: var(--accent-cyan);
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.certification-card:hover .certification-cta {
+  background: var(--accent);
+  color: #ffffff;
+}
+
 /* Featured Projects: Symmetrical 2-Column Grid */
 .projects-grid {
   display: grid;
@@ -963,6 +1059,10 @@ body {
   .skills-grid, .projects-grid {
     grid-template-columns: 1fr;
   }
+
+  .certifications-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
@@ -1015,6 +1115,15 @@ body {
   .project-links {
     width: 100%;
     justify-content: flex-start;
+  }
+
+  .certifications-section {
+    padding-top: 0;
+    padding-bottom: 3rem;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
   }
 }
 
