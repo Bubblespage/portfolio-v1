@@ -15,6 +15,25 @@ if (menuToggle && navLinks) {
   });
 }
 
+const skillCards = document.querySelectorAll('.skill-card');
+
+if (skillCards.length) {
+  const revealSkills = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const skillObserver = new IntersectionObserver(revealSkills, {
+    threshold: 0.2,
+  });
+
+  skillCards.forEach((card) => skillObserver.observe(card));
+}
+
 // Architecture Blueprint Modal Handlers
 function openArchModal() {
   const modal = document.getElementById('archModal');

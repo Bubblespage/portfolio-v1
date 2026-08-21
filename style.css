@@ -443,6 +443,31 @@ body {
   border-radius: 20px;
   padding: 1.8rem;
   transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.skill-card.is-visible {
+  animation: skillReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.skill-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.skill-card:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+@keyframes skillReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .skill-card:hover {
@@ -1133,5 +1158,13 @@ body {
 
   .arch-img-wrap {
     padding: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
