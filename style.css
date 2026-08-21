@@ -602,16 +602,16 @@ body {
 }
 
 .certification-cta {
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   margin-top: 0.9rem;
+  padding: 0.4rem 0.65rem;
   border: 1px solid rgba(47, 129, 247, 0.35);
-  border-radius: 8px;
+  border-radius: 7px;
   background: rgba(47, 129, 247, 0.1);
   color: var(--accent-cyan);
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-weight: 700;
   transition: background 0.2s ease, color 0.2s ease;
 }
