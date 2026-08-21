@@ -148,7 +148,9 @@
 
           <h3 class="project-title">3D Car Configurator</h3>
           <p class="project-summary">
-            An interactive multi-vehicle 3D configurator built with Flutter Web and Google <model-viewer> (WebGL). Features dynamic real-time PBR paint and material shader manipulation via JavaScript injection, multi-angle camera views, responsive multi-car catalog switching, and instant MSRP/financing calculation powered by Flutter Riverpod.
+            An interactive multi-vehicle 3D configurator built with Flutter Web and Google model-viewer (WebGL). Features dynamic real-time PBR paint and material shader manipulation via JavaScript injection, multi-angle camera views, responsive multi-car catalog switching, and instant MSRP/financing calculation powered by Flutter Riverpod.
+          </p>
+
           <div class="project-footer">
             <div class="project-meta">
               <span>● WebGL / Google Model Viewer 3D Rendering</span>
@@ -178,6 +180,7 @@
           <h3 class="project-title">NYSE Bites</h3>
           <p class="project-summary">
             A modern bakery ordering and storefront web application built with Flutter Web. Features dynamic product catalog categorization, interactive cake builder workflows (custom tiers, flavors, toppings, and piping messages), real-time tray price calculations, dietary/sweetness preference controls, and an auto-sliding customer review showcase.
+          </p>
 
           <div class="project-footer">
             <div class="project-meta">
@@ -185,6 +188,10 @@
               <span>● Real-Time Custom Order & Tray Flow</span>
             </div>
             <div class="project-links">
+              <button type="button" class="card-btn btn-arch" onclick="openArchModal()">
+                <span>Architecture</span>
+                <span class="btn-icon">📐</span>
+              </button>
               <a href="https://github.com/Bubblespage/nysebites-web" target="_blank" class="card-btn">
                 <span>GitHub Code</span>
                 <span class="btn-arrow">↗</span>
@@ -223,7 +230,7 @@
           </div>
         </article>
 
-          <!-- Project 4: BSIT Curriculum & Subject Roadmap -->
+        <!-- Project 4: BSIT Curriculum & Subject Roadmap -->
         <article class="project-card">
           <div class="project-top">
             <div class="project-badge-wrap">
@@ -256,6 +263,50 @@
       </div>
     </div>
   </section>
+
+  <!-- Architecture Blueprint Modal -->
+  <div class="arch-modal-overlay" id="archModal" onclick="closeArchModalOnBackdrop(event)">
+    <div class="arch-modal-container">
+      <div class="arch-modal-header">
+        <div>
+          <span class="section-tag">System Design</span>
+          <h3 class="arch-modal-title">NYSE Bites Architecture Blueprints</h3>
+        </div>
+        <button class="arch-close-btn" onclick="closeArchModal()" aria-label="Close modal">&times;</button>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="arch-tabs">
+        <button class="arch-tab active" onclick="switchArchTab(0)">1.0 System Cloud</button>
+        <button class="arch-tab" onclick="switchArchTab(1)">2.0 Component Tree</button>
+        <button class="arch-tab" onclick="switchArchTab(2)">3.0 Layered 3-Tier</button>
+        <button class="arch-tab" onclick="switchArchTab(3)">4.0 UI Wireflow</button>
+        <button class="arch-tab" onclick="switchArchTab(4)">5.0 UML Schema</button>
+      </div>
+
+      <!-- Tab Panes -->
+      <div class="arch-pane active">
+        <p class="arch-caption"><strong>Figure 1.0:</strong> End-to-End Cloud and Application System Architecture (Vercel CDN + Android APK Runtime)</p>
+        <div class="arch-img-wrap"><img src="assets/docs/figure1_system_architecture.png" alt="Figure 1.0 System Architecture Blueprint" /></div>
+      </div>
+      <div class="arch-pane">
+        <p class="arch-caption"><strong>Figure 2.0:</strong> Flutter Component Hierarchy and Module Organization (Widgets, Controllers & Overlays)</p>
+        <div class="arch-img-wrap"><img src="assets/docs/figure2_component_tree.png" alt="Figure 2.0 Component Hierarchy Tree" /></div>
+      </div>
+      <div class="arch-pane">
+        <p class="arch-caption"><strong>Figure 3.0:</strong> Layered Architectural Pattern and Reactive Data Flow (Unidirectional setState Loop)</p>
+        <div class="arch-img-wrap"><img src="assets/docs/figure3_layered_architecture.png" alt="Figure 3.0 Layered Architecture Pattern" /></div>
+      </div>
+      <div class="arch-pane">
+        <p class="arch-caption"><strong>Figure 4.0:</strong> E-Commerce User Journey and Interaction Wireflow (Landing to Order Tracker)</p>
+        <div class="arch-img-wrap"><img src="assets/docs/figure4_wireflow.png" alt="Figure 4.0 UI/UX Wireflow" /></div>
+      </div>
+      <div class="arch-pane">
+        <p class="arch-caption"><strong>Figure 5.0:</strong> Object-Oriented Domain Model and Entity-Relationship Schema</p>
+        <div class="arch-img-wrap"><img src="assets/docs/figure5_uml_schema.png" alt="Figure 5.0 UML Class and Data Schema" /></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Contact & Footer Section -->
   <footer class="section-wrapper footer-section" id="contact">
