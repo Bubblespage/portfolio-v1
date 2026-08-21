@@ -175,6 +175,10 @@ body {
   padding-bottom: 2rem;
 }
 
+#projects {
+  padding-top: 0;
+}
+
 .hero-container {
   display: flex;
   align-items: center;
